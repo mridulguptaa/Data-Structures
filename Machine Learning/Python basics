@@ -1,0 +1,15 @@
+from matplotlib import pyplot as plt
+import numpy as np
+
+mean_01=np.array([5.0,10.0])
+cov_01=np.array([[1.0,0.2],[0.5,1.0]])
+dist_01=np.random.multivariate_normal(mean_01,cov_01,200)
+
+print (dist_01.shape)
+plt.figure(0)
+
+mean_02=np.array([])
+
+for x in range(dist_01.shape[0]):
+	plt.scatter(dist_01[x,0],dist_01[x,1],color='green')
+plt.show('hold')
